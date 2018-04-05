@@ -1,25 +1,27 @@
 import * as express from 'express'
 import {Request, Response, Application} from 'express-serve-static-core'
 import {get, use} from './decorators'
+import {ExpressApp} from './decorators/express'
 
+class ExpressServer {
+  app: Application
+  port: number
+}
 
-export default class Server {
-  public app: Application
+@ExpressApp(3434)
+export default class Server extends ExpressServer {
 
-  @get('/a')
-  a(req, res:Response) {
-    res.send("Welcome to AAAAA")
+  // @get('/a') getA(req, res: Response) {
+  //   res.send("Welcome to AAAA")
+  // }
+  //
+  //
+  // @get('/b') getB(req, res: Response) {
+  //   res.send("Welcome to BBBB")
+  // }
+
+  start() {
+    this.app.listen(this.port)
   }
 
-  @use
-  hello(req, res: Response) {
-    res.send("Hello World")
-  }
-
-
-  start () {
-    this.app.listen(3434, () => {
-      console.log(`Started on http://localhost:3434`)
-    })
-  }
 }
