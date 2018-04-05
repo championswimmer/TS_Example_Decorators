@@ -1,0 +1,19 @@
+{
+  "name": "exampledecorators",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.11.1",
+    "@types/node": "^9.6.2",
+    "typescript": "^2.8.1"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
